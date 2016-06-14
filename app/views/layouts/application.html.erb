@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FirstRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <a href="/">Welcome</a>
+    <a href="/lorem">Lorem</a>
+  </nav>
+
+  <%= yield %>
+
+  <li><a href="/welcome/batman">Batman Ipsum</a></li>
+  <li><a href="/welcome/star_wars">Star Wars Ipsum</a></li>
+
+</body>
+</html>
