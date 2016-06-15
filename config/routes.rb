@@ -4,12 +4,14 @@ Rails.application.routes.draw do
 
   # method | url | controller#action
   root 'welcome#index' # => 'app/views/welcome/index.html'
-  get  'show' => 'welcome#show'
-  get  'welcome/:id' => 'welcome#lorem' # => app/views/welcome/lorem.html.erb
+  get  'name' => 'welcome#name'
+  get  'lorem/:id' => 'welcome#lorem' # => app/views/welcome/lorem.html.erb
 
   # get 'welcome/:id' => 'welcome#lorem' # => app/views/welcome/lorem.html.erb
 
-
+  #CHECK: Index: GET "/", returns a welcome message
+  #Show: GET "/billy", returns a specializaed welcome message for whatever name is passed to it as a param
+  #Lorem: GET "/lorem/standard", returns lorem ipsum of the type req
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
