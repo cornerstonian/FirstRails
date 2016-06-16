@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FirstRails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!--
+
+  <%= debug params %>
+  <hr>
+  <h1>Choose Your Ipsum</h1
+
   <nav>
-    <a href="/">Welcome</a>
-    <a href="/lorem">Lorem</a>
-  </nav> -->
+  <li><%= link_to 'Batman Ipsum', lorem_path(id: "batman") %>
+  <li><%= link_to 'Cupckae Ipsum', lorem_path(id: "cupcake") %>
+  <li><%= link_to 'Space Ipsum', lorem_path(id: "space") %>
+  <li><%= link_to 'Zombie Ipsum', lorem_path(id: "zombie") %>
+</nav>
+
+
+
+
 
   <%= yield %>
 
-  <li><a href="/welcome/name">Names</a></li>
-  
+  <h5>This is an H5 For no good reason</h5>
+
+
+
 </body>
 </html>

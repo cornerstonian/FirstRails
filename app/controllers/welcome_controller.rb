@@ -2,37 +2,43 @@ class WelcomeController < ApplicationController
 
 
 
-  def ipsum_paragraphs
+  def ipsum_samples
+  { :cupcake => "Cupcake ipsum dolor. Sit amet jelly-o sweet marzipan apple pie sugar plum muffin cake. Oat cake gummies gummies macaroon cookie macaroon bear claw bonbon.",
 
-      { :star_wars => "Lucas ipsum dolor sit amet mon cathar farlander gunray x'ting xizor sidious maul danni ebe. Rom caedus skywalker iridonian naberrie skywalker paploo. Gamorr luke windu solo. Paploo dooku warrick gilad veila thakwaash habassa. Priapulin rieekan rhen kit nas. Bel grodin jawa cody tusken raider aramandi fel. Breha voxyn stereb teneniel noghri phlog nikto lepi garm. Chirrpa kathol saesee seerdon gricho chistori vaathkree. Rune kit lah thisspias felth mas porkins ooryl zabrak. Gran kalarba nosaurian moff.",
+     :batman => "This town deserves a better class of criminal and I'm gonna give it to them. Tell your men they work for me now. This is my city.",
 
-      :batman => "This is what happens when an unstoppable force meets an immovable object. The first time I stole so that I wouldn't starve, yes. I lost many assumptions about the simple nature of right and wrong. And when I traveled I learned the fear before a crime and the thrill of success. But I never became one of them. I just the took to calling it the Bat. And yes Mr. Wayne, it does come in black."
+     :yolo => "Don’t trust anyone, cause you only live once. Pop a molly, I’m sweatin’, consequat feugiat eros. How you like your eggs, fried or fertilized? I’m ballin’ hard, I need a jersey on.",
+
+     :zombie => "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?",
+
+     :space => "We have an infinite amount to learn both from nature and from each other. Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals."
 
     }
+
   end
 
   def lorem
-
-  end
-
-  def name
-    @names = fetch_names
-
     id = params[:id]
-    @name = @names.find {|name| name.parameterize == params[:id] }
+    @ipsum_paragraphs = ipsum_samples[id.to_sym]
 
-    render_404 if @person.nil?
+    render_404 if @ipsum_paragraphs.nil?
+  end
+
+  def dev_list
+      devs = []
+      devs << "Lavoisier"
+      devs << "Marcus"
+      devs << "Damien"
+      devs << "Karega"
+      return devs
   end
 
 
-  def fetch_names
-    names = []
-    names << 'Lavoisier'
-    names << 'Marcus'
-    names <<'Gregory'
-    return names
-  end
+  def names
+    @devs = dev_list
 
+    @dev = @devs.find {|dev| dev == params[:id] }
+  end
 
 
 
