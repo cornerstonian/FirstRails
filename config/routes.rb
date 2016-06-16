@@ -7,6 +7,11 @@ Rails.application.routes.draw do
    get  'lorem/:id' => 'welcome#lorem', as: :lorem
    get 'names/:id' => 'welcome#names', as: :names
 
+   get 'users' => 'users#list', as: :users
+   get 'contacts/:id' => 'contacts#detail', as: :contact
+   get 'contacts/:id/edit' => 'contacts#edit', as: :edit_contact
+
+
 
   #CHECK: Index: GET "/", returns a welcome message
   #Show: GET "/billy", returns a specializaed welcome message for whatever name is passed to it as a param

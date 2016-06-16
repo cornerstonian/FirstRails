@@ -24,20 +24,19 @@ class WelcomeController < ApplicationController
     render_404 if @ipsum_paragraphs.nil?
   end
 
+
   def dev_list
-      devs = []
+      @devs = []
       devs << "Lavoisier"
       devs << "Marcus"
       devs << "Damien"
       devs << "Karega"
-      return devs
+      return @devs
   end
 
 
   def names
     @devs = dev_list
-
-    @dev = @devs.find {|dev| dev == params[:id] }
   end
 
 

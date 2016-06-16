@@ -1,3 +1,6 @@
-<h1><%=@dev%></h1>
-
 <h1>Pick a Developer</h1>
+<ul>
+  <%@devs.each do |dev| %>
+  <li><%= dev == params[:id]%></li>
+  <% end %>
+</ul>
